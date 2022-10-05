@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculate Discount</title>
+    <h2>Mamatha Mallela computes discounts</h2>
+</head>
+
+<body>
+
+    <h2>Getting input</h2>
+
+    <form>
+        <label for="form1_amount">Enter base amount</label>
+        <input type="number" id="form1_amount" name="form1_amount" min=1 max=5000 step=2 value=20 autofocus> <br>
+
+        <label for="form1_discount">Enter the discount percentage</label>
+        <input type="number" id="form1_discount" name="form1_discount" min=0 max=100 step=2 value=10> <br>
+
+        <input type="button" onclick="discount()" value="Apply discount">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+
+        function discount() {
+            amount = document.getElementById("form1_amount").value
+            discount1 = document.getElementById("form1_discount").value
+            console.log(document.getElementById("form1_amount").value)
+            console.log(document.getElementById("form1_discount").value)
+            result = ""
+            result = "Discounted amounts for base " + amount + " are "
+            for (i = 1; i <= 5; i++) {
+                discountedAmount = amount - (amount * (discount1 / 100))
+                result += (discountedAmount * i + " ")
+            }
+
+            document.getElementById("result").innerHTML = result
+
+        }
+    </script>
+
+</body>
+
+</html>

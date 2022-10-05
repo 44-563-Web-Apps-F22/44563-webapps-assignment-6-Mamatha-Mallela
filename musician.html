@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Guess Musician</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
     <h2>Musician guess by Mamatha Mallela</h2>
     <form>
@@ -34,18 +36,18 @@
             }
         }
         let useImage = 1;
-        function swapImage(){
-            switch(useImage){
+        function swapImage() {
+            switch (useImage) {
                 case 1:
-                    document.getElementById("image-fly").src="lice.jpg";
+                    document.getElementById("image-fly").src = "lice.jpg";
                     useImage = 2;
                     break;
                 case 2:
-                    document.getElementById("image-fly").src="AlderFly.jpg";
+                    document.getElementById("image-fly").src = "AlderFly.jpg";
                     useImage = 3;
                     break;
                 case 3:
-                    document.getElementById("image-fly").src="mayfly.jpg";
+                    document.getElementById("image-fly").src = "mayfly.jpg";
                     useImage = 1;
                     break;
                 default:
@@ -53,8 +55,8 @@
             }
         }
     </script>
-<div class="container">
-    <img src="mayfly.jpg" id="image-fly" width="100" height="100" onclick=swapImage()>
+    <div class="container">
+        <img src="mayfly.jpg" id="image-fly" width="100" height="100" onclick=swapImage()>
     </div>
 </body>
 
