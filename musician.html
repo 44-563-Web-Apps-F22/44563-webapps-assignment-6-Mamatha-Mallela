@@ -20,20 +20,29 @@
     <script>
         let correct = 0;
         let wrong = 0;
+        let count = 0;
         function checkGuess() {
             name = document.getElementById("form1_name").value
             guess = document.getElementById("form1_guess").value
             out = document.getElementById("result")
             if (name == guess) {
-                alert("You got it right")
+                count = 0
                 correct = correct + 1
+                alert("You got it right")
                 out.innerHTML = "You got " + correct + " correct and " + wrong + " wrong."
             }
             else {
-                alert("Wrong Musician")
+                count +=1
                 wrong = wrong + 1
-                out.innerHTML = "You got " + correct + " correct and " + wrong + " wrong."
+                alert("Wrong Musician")
+                if(count >= 3){
+                        wrongGuess()
+                }
+                out.innerHTML = "You got " + correct + " correct and " + wrong + " wrong."   
             }
+        }
+        function wrongGuess(){
+             alert("Sorry, game over.")
         }
         let useImage = 1;
         function swapImage() {
