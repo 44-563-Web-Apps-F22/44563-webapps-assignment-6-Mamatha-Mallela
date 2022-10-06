@@ -21,17 +21,17 @@
     <p id="result_vacation"></p><br>
 
     <form>
-        <label for="form1_age">What is your age </label>
-        <input type="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+        <label for="form1_city">Enter a city </label>
+        <input type="text" id="form1_city" name="form1_city" value="city"> <br>
 
-        <label for="form1_nick">What is your nickname </label>
-        <input type="text" id="form1_nick" name="form1_nick"> <br>
+        <label for="form1_price">Enter price </label>
+        <input type="text" id="form1_price" name="form1_price"> <br>
 
-        <input type="button" onclick="resolveForm()" value="Get values from form">
+        <input type="button" onclick="updateVacation()" value="Update the vacation">
     </form>
 
 
-    <p id="result">This text will be replaced </p>
+    <p id="result_property"></p>
 
     <script>
         my_vacation = {}
@@ -58,22 +58,14 @@
                 my_vacation["resort"] = false;
             }
             document.getElementById("result_vacation").innerHTML = "Travel by Air : " + my_vacation.air
-                + " Domestic : " + my_vacation.domestic
-                + " Resort : " + my_vacation.resort;
-
+                + " Domestic : " + my_vacation.domestic + " Resort : " + my_vacation.resort;
         }
-        function resolveForm() {
-            console.log("Getting form values")
-            age = document.getElementById("form1_age").value
-            nick = document.getElementById("form1_nick").value
-            confirmed = confirm("Are these the values? " + age + " and " + nick)
-
-            out = document.getElementById("result")
-            if (confirmed) {
-                out.innerHTML = "Values were confirmed"
-            } else {
-                out.innerHTML = "Values were not confirmed"
-            }
+        function updateVacation() {
+            city = document.getElementById("form1_city").value
+            price = document.getElementById("form1_price").value
+            my_vacation["city"] = city;
+            my_vacation["price"] = price;
+            document.getElementById("result_property").innerHTML = "City : " + my_vacation.city + " Price : " + my_vacation.price
         }
     </script>
 
