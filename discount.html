@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Calculate Discount</title>
-
 </head>
-
 <body>
-
     <h2>Mamatha Mallela computes discounts</h2>
-
     <form>
         <label for="form1_amount">Enter base amount</label>
         <input type="number" id="form1_amount" name="form1_amount" min=1 max=500000 step=1 value=20 autofocus> <br>
-
         <label for="form1_discount">Enter the discount percentage</label>
         <input type="number" id="form1_discount" name="form1_discount" min=0 max=100 step=1 value=10> <br>
-
         <input type="button" onclick="discount()" value="Apply discount">
     </form>
+    <p id="result_discount"></p>
 
-
-    <p id="result">This text will be replaced </p>
-
+    <form>
+        <input type="radio" id="rg1_times" name="calc" value="times" onclick="chooseOp()">
+        <label for="rg1_times">*</label></br>
+        <input type="radio" id="rg1_divide" name="calc" onclick="chooseOp()" value="divide">
+        <label for="rg1_divide">/</label></br>
+        <input type="radio" id="rg1_exponent" name="calc" onclick="chooseOp()" value="exponent">
+        <label for="rg1_exponent">**</label></br>
+    </form>
+    <p id="result_radio"></p>
     <script>
-
         function discount() {
             amount = document.getElementById("form1_amount").value
             discount1 = document.getElementById("form1_discount").value
@@ -34,12 +33,21 @@
                 discountedAmount = amount - (amount * (discount1 / 100))
                 result += (discountedAmount * i + " ")
             }
-
-            document.getElementById("result").innerHTML = result
-
+            document.getElementById("result_discount").innerHTML = result
+        }
+        function chooseOp() {
+            amount = document.getElementById("form1_amount").value
+            discount1 = document.getElementById("form1_discount").value
+            multiply = document.getElementById("rg1_times").checked
+            divide = document.getElementById("rg1_divide").checked
+            expo = document.getElementById("rg1_exponent").checked
+            if (multiply)
+                document.getElementById("result_radio").innerHTML = amount * discount1
+            if (divide)
+                document.getElementById("result_radio").innerHTML = amount / discount1
+            if (expo)
+                document.getElementById("result_radio").innerHTML = amount ** discount1
         }
     </script>
-
 </body>
-
 </html>
