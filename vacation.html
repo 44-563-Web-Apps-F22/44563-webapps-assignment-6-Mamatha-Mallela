@@ -2,13 +2,14 @@
 <html>
 <title>Choose Vacation</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <body>
 
     <h2>Mamatha Mallela selects a vacation</h2>
 
     <form>
+        <div class="form-group">
         <input type="checkbox" id="cb1_air" name="air" value="air" checked>
         <label for="cb1_air">Travel by Air</label></br>
 
@@ -17,19 +18,23 @@
 
         <input type="checkbox" id="cb1_Resort" name="resort" value="resort">
         <label for="cb1_Resort">Resort</label></br>
-
-        <input type="button" onclick="selectVacation()" value="Select a vacation">
+        <div>
+            <input type="button" class="btn btn-primary" onclick="selectVacation()" value="Select a vacation">
+        </div>
+    </div>
     </form>
     <p id="result_vacation"></p><br>
 
     <form>
+        <div class="form-group">
         <label for="form1_city">Enter a city </label>
         <input type="text" id="form1_city" name="form1_city" value="city"> <br>
 
         <label for="form1_price">Enter price </label>
         <input type="text" id="form1_price" name="form1_price"> <br>
 
-        <input type="button" onclick="updateVacation()" value="Update the vacation">
+        <input type="button" class="btn btn-primary" onclick="updateVacation()" value="Update the vacation">
+    </div>
     </form>
 
 
