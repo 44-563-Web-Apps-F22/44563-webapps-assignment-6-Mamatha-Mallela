@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>Choose Vacation</title>
+
+<body>
+
+    <h2>Mamatha Mallela selects a vacation</h2>
+
+    <form>
+        <input type="checkbox" id="cb1_air" name="air" value="air" checked>
+        <label for="cb1_air">Travel by Air</label></br>
+
+        <input type="checkbox" id="cb1_Domestic" name="domestic" value="domestic" checked>
+        <label for="cb1_Domestic">Domestic</label></br>
+
+        <input type="checkbox" id="cb1_Resort" name="resort" value="resort">
+        <label for="cb1_Resort">Resort</label></br>
+
+        <input type="button" onclick="selectVacation()" value="Select a vacation">
+    </form>
+    <p id="result_vacation"></p><br>
+
+    <form>
+        <label for="form1_age">What is your age </label>
+        <input type="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+        <label for="form1_nick">What is your nickname </label>
+        <input type="text" id="form1_nick" name="form1_nick"> <br>
+
+        <input type="button" onclick="resolveForm()" value="Get values from form">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        my_vacation = {}
+        function selectVacation() {
+            air = document.getElementById("cb1_air").checked
+            domestic = document.getElementById("cb1_Domestic").checked
+            resort = document.getElementById("cb1_Resort").checked
+            if (air) {
+                my_vacation["air"] = true;
+            }
+            else {
+                my_vacation["air"] = false;
+            }
+            if (domestic) {
+                my_vacation["domestic"] = true;
+            }
+            else {
+                my_vacation["domestic"] = false;
+            }
+            if (resort) {
+                my_vacation["resort"] = true;
+            }
+            else {
+                my_vacation["resort"] = false;
+            }
+            document.getElementById("result_vacation").innerHTML = "Travel by Air : " + my_vacation.air
+                + " Domestic : " + my_vacation.domestic
+                + " Resort : " + my_vacation.resort;
+
+        }
+        function resolveForm() {
+            console.log("Getting form values")
+            age = document.getElementById("form1_age").value
+            nick = document.getElementById("form1_nick").value
+            confirmed = confirm("Are these the values? " + age + " and " + nick)
+
+            out = document.getElementById("result")
+            if (confirmed) {
+                out.innerHTML = "Values were confirmed"
+            } else {
+                out.innerHTML = "Values were not confirmed"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
